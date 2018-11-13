@@ -240,7 +240,8 @@ class Transformer(object):
     top_decoded_ids = decoded_ids[:, 0, 1:]
     top_scores = scores[:, 0]
 
-    return {"outputs": top_decoded_ids, "scores": top_scores}
+    return {"outputs": top_decoded_ids, "scores": top_scores,
+        "encoder_outputs": encoder_outputs}
 
 
 class LayerNormalization(tf.layers.Layer):
